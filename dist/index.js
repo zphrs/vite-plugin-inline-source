@@ -89,7 +89,7 @@ function VitePluginInlineSource(opts) {
             "import.meta.env.SSR": `${env.isSsrBuild}`,
             ...envVarDefines
           },
-          packages: "bundle"
+          bundle: true
         });
         if (transformResult.errors.length != 0) {
           console.error(transformResult);
