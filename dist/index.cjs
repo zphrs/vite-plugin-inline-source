@@ -126,7 +126,6 @@ function VitePluginInlineSource(opts) {
           console.error(transformResult);
           throw new Error(transformResult.errors.join("\n"));
         } else {
-          console.log(transformResult.outputFiles[0].text);
           fileContent = transformResult.outputFiles[0].text;
         }
         if (options.optimizeJs) {
