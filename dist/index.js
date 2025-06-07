@@ -74,7 +74,8 @@ function VitePluginInlineSource(opts) {
       } else if (isTsFile && options.compileTs) {
         const envVars = loadEnv(env.mode, process.cwd());
         const envVarDefines = Object.entries(envVars).reduce((prev, [key, value]) => {
-          if (key.startsWith("VITE")) prev[`import.meta.env.${key}`] = value;
+          if (key.startsWith("VITE"))
+            prev[`import.meta.env.${key}`] = `"${value}"`;
           return prev;
         }, {});
         console.log(envVarDefines);
