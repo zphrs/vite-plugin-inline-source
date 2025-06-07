@@ -109,6 +109,7 @@ function VitePluginInlineSource(opts) {
           if (key.startsWith("VITE")) prev[`import.meta.env.${key}`] = value;
           return prev;
         }, {});
+        console.log(envVarDefines);
         const transformResult = await esbuild.build({
           entryPoints: [filePath],
           write: false,
